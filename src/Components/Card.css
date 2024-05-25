@@ -1,0 +1,126 @@
+.products{
+    border: 1px solid  #CCCDCE;
+    border-radius: 10px;
+    width: 700px;
+    background-color: #F8F9FA;
+    padding: 30px;
+    margin: 50px 50px 50px 50px;
+    display: flex;
+    flex-direction: row;
+}
+.cart{
+    display: flex;
+    justify-content: center;
+}
+
+.productimage{
+    width: 250px;
+    height: 150px;
+    min-width: 250px;
+    min-height: 258px;
+    overflow: hidden;
+}
+.img_price{
+    display: flex;
+    justify-content: space-between;
+    object-fit: cover;
+}
+.product_img_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img{
+    width: 100%;
+}
+
+.quantity{
+    font-size:25px;
+}
+.incdec{
+    display: flex;
+    align-items: center;
+}
+
+.minus,.plus{
+    border: none;
+    background-color: #F8F9FA;
+    font-size: 25px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.minus{
+    color: red;
+}
+.minus:hover{
+    background-color: red;
+    color: white;
+}
+
+.plus{
+    color: greenyellow;
+    margin: 10px;
+}
+
+.plus:hover{
+    background-color: greenyellow;
+    color: white;
+}
+.minus,.plus.qprice{
+    margin-left: 200px;
+}
+
+.productdetails{
+    padding-left: 10px;
+}
+
+span{
+    font-weight: bold;
+}
+
+.remove{
+    display: flex;
+    justify-content: space-between;
+}
+
+.removebtn {
+    color: brown;
+    font-size: 20px;
+    border: none;
+    background-color: #F8F9FA;
+}
+
+.removebtn:hover{
+    color: white;
+    background-color: brown;
+    border-radius: 5px;
+}
+
+.offer{
+    color: green;
+
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pay{
+    display: flex;
+    justify-content: end;
+}
+
+.paynow{
+    color: white;
+    background-color: green;
+    font-size: medium;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+
+}
+
