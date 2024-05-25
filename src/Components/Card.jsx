@@ -7,7 +7,6 @@ const Card = () => {
     const [value ,setValue] = useState(data)
     const [changed,setChanged] = useState(false)
      function add(e,ope){
-        console.log(e,ope,"opee")
         if(ope === "plus"){
          value[e].quantity +=1
             setChanged(true)
@@ -23,7 +22,6 @@ const Card = () => {
         setValue(value)
         setChanged(false)
     },[changed])
-    console.log(value);
     return (
         <div>
             {data?.map((element,index)=>{
