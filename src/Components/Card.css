@@ -124,6 +124,15 @@ span{
 
 }
 
+.totalvalueofcart{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid;
+    background-color: burlywood;
+    width: 100%;
+ 
+}
+
 @media only screen and (max-width: 1000px) {
     .products{
         border: 1px solid  #CCCDCE;

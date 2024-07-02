@@ -6,6 +6,11 @@ const Card = () => {
     const [data,setData]=useContext(mycontext)
     const [value ,setValue] = useState(data)
     const [changed,setChanged] = useState(false)
+
+    const [totalqty, setTotalqty] = useState(0);
+    const [totalcost, setTotalcost] = useState(0);
+
+
      function add(e,ope){
         if(ope === "plus"){
          value[e].quantity +=1
@@ -13,17 +18,41 @@ const Card = () => {
       
         }
         else{
-            if(value[e].quantity < 1) return;
+            if(value[e].quantity <= 1) return;
             value[e].quantity -=1
             setChanged(true)  
         }
     }
+
+
+    const remove=(id)=>{
+        const prevData = data?.filter(product => product.id !== id)
+       
+        setData(prevData);  
+        setChanged(true)  
+
+    }
+
     useEffect(()=>{
+
+        const totalqty = data?.reduce((acc, product) => acc + product.quantity , 0);
+        setTotalqty(totalqty);
+
+        const totalcost = data?.reduce((acc, product) => acc + product.quantity*  product.finalprice, 0);
+        setTotalcost(totalcost);
+
         setValue(value)
         setChanged(false)
+
     },[changed])
     return (
         <div>
+             <div className='totalvalueofcart'>
+                <div className='totalcart'>
+                    <h1>Totalquantity:{totalqty}</h1>
+                    <h1>TotalPrice:{totalcost}</h1>
+                </div>
+                </div>
             {data?.map((element,index)=>{
                 return(
                     <div key={element.id}>
@@ -56,7 +85,7 @@ const Card = () => {
                             <p><span>Rating : </span>{element.rating}</p>
                             <div className='remove'>
                             <p><span>Discount Price : </span><span className='offer'>{element.discountPercentage}</span></p>
-                            <button type='button' className='removebtn rem' onClick={()=>{value[index].quantity=1,setChanged(true)}}>Remove</button>
+                            <button type='button' className='removebtn rem' onClick={()=>{remove(element.id)}}>Remove</button>
                             </div>
                             <hr/>
                             <p className="price">Price Per Item :<span > {element.price}</span></p>
